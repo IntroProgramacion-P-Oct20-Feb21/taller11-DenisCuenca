@@ -16,22 +16,26 @@ public class Ejemplo4 {
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String[] args) {
-        // 
-        int numeroDatos = 4;
-        int[] informacion = obtenerDatos(numeroDatos);
+        //
+        Scanner entrada = new Scanner(System.in);
+        int numeroDatos;
+        System.out.println("Numero de datos a ingresar: ");
+        numeroDatos = entrada.nextInt();
+        String[] informacion = obtenerDatos(numeroDatos, entrada);
         for (int i = 0; i < informacion.length; i++) {
-            System.out.printf("Datos ingresado: %d\n", informacion[i]);
+            System.out.printf("Datos ingresado: %s\n", informacion[i]);
         }
     }
     
-    public static int[] obtenerDatos(int numero){
-        Scanner entrada = new Scanner(System.in);
-        int [] arregloResultante = new int[numero];
-        int valor;
+    public static String[] obtenerDatos(int numero, Scanner entrada){
+        //Scanner entrada = new Scanner(System.in);
+        String [] arregloResultante = new String[numero];
+        String valor;
         for (int i = 0; i < numero; i++) {
-            System.out.println("Ingrese valor");
-            valor = entrada.nextInt();
+            System.out.println("Ingrese valor");          
+            valor = entrada.nextLine();
             arregloResultante[i] = valor;
         }
         return arregloResultante;
